@@ -13,7 +13,7 @@ function CounterElement({ label, end, duration, delay }) {
   }, []);
 
   return (
-    <div className="md:text-2xl mb-2 md:mb-6">
+    <div className="[text-shadow:_2px_2px_black] md:text-2xl mb-2 md:mb-6">
       <div className="text-4xl md:text-6xl">
         <CountUp
           start={0}
@@ -26,7 +26,7 @@ function CounterElement({ label, end, duration, delay }) {
       <div
           className={`${
             counterFinished ? "opacity-100" : "opacity-0"
-          } transition-opacity ease-in-out duration-1000`}
+          } mt-1 transition-opacity ease-in-out duration-1000`}
         >
           {label}
       </div>

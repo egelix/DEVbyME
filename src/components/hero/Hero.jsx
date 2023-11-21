@@ -13,13 +13,13 @@ function Hero() {
   // }, []);
 
   return (
-    <div style={{backgroundImage: `url(${bgLight})`}}
-    className="lg:pl-24 bg-cover bg-center bg-fixed pt-16 w-full flex items-center justify-center lg:justify-normal md:h-screen h-screen">
-      <div className="w-[90%] h-max-[90%] p-4 bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl md:min-w-[70vh] md:min-h-[70vh] dark:bg-black/30 dark:text-zinc-200">
+    <section id="hero-section" style={{backgroundImage: `url(${bgLight})`}}
+    className="lg:pl-24 bg-cover bg-center bg-fixed pt-16 w-full flex items-center justify-center lg:justify-normal md:min-h-screen ">
+      <div className="w-[90%] h-max-[90%] p-4 my-6 bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl md:min-w-[70vh] md:min-h-[70vh] dark:bg-black/30 text-zinc-200">
         <div>
           <h1>Martin Egert</h1>
           <h2 className="pl-1 pt-1 md:pl-2">Full Stack Developer</h2>
-          <hr className="bg-red-700 mt-4 w-[70%]"/>
+          <hr className="border-b-1 border-black mt-4 w-[70%]"/>
         </div>
         <div className="w-full pl-2 ">
           <div className="inline md:grid md:grid-cols-2 mt-6">
@@ -55,7 +55,7 @@ function Hero() {
                     delay={1}
                   />
             </div>
-            <div className="mt-4 font-bold">
+            <div className="mt-4">
             <CounterElement
                     label={"completely made-up numbers to get your attention"}
                     end={4}
@@ -118,7 +118,7 @@ function Hero() {
           </table> */}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
