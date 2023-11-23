@@ -1,6 +1,6 @@
 function Projects() {
   return (
-    <section id="projects-section" className="h-screen bg-green-500">
+    <section id="projects-section" className="h-screen">
       <div className="pt-16">
       Projects
       </div>

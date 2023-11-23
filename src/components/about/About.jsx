@@ -1,7 +1,7 @@
 function About({ elementRef }) {
   return (
-    <section id="about-section" ref={elementRef} className="h-screen bg-green-100">
-      <div className="pt-16">
+    <section id="about-section" ref={elementRef} className="h-screen pt-16">
+      <div>
       About Me!
       </div>
     </section>

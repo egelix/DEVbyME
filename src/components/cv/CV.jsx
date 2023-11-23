@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-function CV() {
+function CV({ elementRef }) {
   const [cvIsIntersecting, setCvIsIntersecting] = useState(false);
   const cvRef = useRef(null);
 
@@ -29,7 +29,7 @@ function CV() {
   }
 
   return (
-    <section id="cv-section" className="h-screen bg-green-200">
+    <section id="cv-section" ref={elementRef} className="h-screen">
       <div className="pt-16" onClick={test}>
         CV
       </div>
