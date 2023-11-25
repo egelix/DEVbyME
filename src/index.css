@@ -8,13 +8,24 @@
     font-family: 'Playfair Display', serif;
     @apply bg-zinc-200 dark:bg-zinc-600
   }
+
   h1 {
     text-shadow: 2px 2px black;
     @apply text-5xl md:text-[112px] lg:text-[138px]
     /* @apply text-[13vw] md:text-[10vw] lg:text-[9vw] */
   }
+
   h2 {
     text-shadow: 2px 2px black;
     @apply text-xl md:text-5xl
   }
+
+  /* h3:dark {
+    text-shadow: 1px 1px black;
+  }
+  label {
+    text-shadow: 1px 1px black;
+  } */
+
+  
 }
