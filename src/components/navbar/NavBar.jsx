@@ -7,11 +7,11 @@ import logo4 from "../../assets/navBarIcons/ME_Logo_4.png"
 
 import { useState } from "react";
 
-function NavBar({aboutRef, cvRef, contactRef}) {
+function NavBar({aboutRef, cvRef, contactRef, projectRef}) {
   let links = [
     { name: "About me", link: aboutRef },
     { name: "Experience", link: cvRef },
-    { name: "Projects", link: "/" },
+    { name: "Projects", link: projectRef },
     { name: "TechStack", link: "/" },
     { name: "Contact", link: contactRef },
   ];

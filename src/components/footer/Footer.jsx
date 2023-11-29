@@ -30,10 +30,11 @@ function Footer({ darkMode, setShowLegal, setShowDatenschutz }) {
               <p className="ml-2">github.com/egelix</p>
             </a>
             <a
-              href="https://linkedin.com/in/martin-egert/" 
+              href="https://linkedin.com/in/martin-egert/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex hover:text-red-700 mt-2"
+              className="flex hover:text-red-700 mt-
+              2"
             >
               <img
                 src={darkMode ? liPicDark : liPicLight}

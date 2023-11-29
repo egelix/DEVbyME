@@ -14,24 +14,25 @@ function App() {
   const aboutRef = useRef(null);
   const cvRef = useRef(null);
   const contactRef = useRef(null);
+  const projectRef = useRef(null);
 
   const [showLegal, setShowLegal] = useState(false);
   const [showDatenschutz, setShowDatenschutz] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="relative scrollbar-hide">
+    <div className="relative overflow-y-scroll no-scrollbar">
       <DarkToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       <LegalNotice showLegal={showLegal} setShowLegal={setShowLegal} />
       <Datenschutz
         showDatenschutz={showDatenschutz}
         setShowDatenschutz={setShowDatenschutz}
       />
-      <NavBar aboutRef={aboutRef} cvRef={cvRef} contactRef={contactRef} />
+      <NavBar aboutRef={aboutRef} cvRef={cvRef} contactRef={contactRef} projectRef={projectRef} />
       <Hero />
       <About elementRef={aboutRef} />
       <CV elementRef={cvRef} />
-      <Projects />
+      <Projects elementRef={projectRef} />
       <Contact elementRef={contactRef} />
       <Footer darkMode={darkMode} setShowLegal={setShowLegal} setShowDatenschutz={setShowDatenschutz} />
     </div>

@@ -1,62 +1,68 @@
-import projects from "../../content/ProjectData";
-import ProjectComponent from "./ProjectComponent";
-import { useState } from "react";
+import projectData from "../../content/ProjectData";
+import { useEffect, useState } from "react";
+import ProjectSliderImages from "./ProjectSliderImages";
 
-function Projects() {
-  const [isOne, setIsOne] = useState(1);
+function Projects({ elementRef }) {
+  const [displayMiddle, setDisplayMiddle] = useState(
+    projectData.firstToDisplay
+  );
+  const [displayLeft, setDisplayLeft] = useState(4);
+  const [displayRight, setDisplayRight] = useState(1);
 
-  console.log(isOne);
+  useEffect(() => {
+    displayMiddle === 0
+      ? setDisplayLeft(projectData.projects.length - 1)
+      : setDisplayLeft(displayMiddle - 1);
+    displayMiddle === projectData.projects.length - 1
+      ? setDisplayRight(0)
+      : setDisplayRight(displayMiddle + 1);
+  }, [displayMiddle]);
+
   function handleNextClick() {
-    isOne === 3 ? setIsOne(1) : setIsOne(isOne + 1)
+    displayMiddle === projectData.projects.length - 1
+      ? setDisplayMiddle(0)
+      : setDisplayMiddle(displayMiddle + 1);
   }
   function handlePreviousClick() {
-    isOne === 1 ? setIsOne(3) : setIsOne(isOne - 1)
+    displayMiddle === 0
+      ? setDisplayMiddle(projectData.projects.length - 1)
+      : setDisplayMiddle(displayMiddle - 1);
   }
 
   return (
-    <section id="projects-section" className="h-screen">
-      <div className="pt-96 flex justify-between">
-        <div
-          className={`${
-            isOne === 1 ? "order1" : isOne === 2 ? "order-3" : "order-2"
-          } h-40 w-40 bg-green-300 transition-all duration-1000`}
-        >
-          1
+    <section id="projects-section" ref={elementRef} className="h-screen">
+      <div className="pt-16">
+        <div className="flex w-screen items-center justify-center">
+          <div
+            onClick={handlePreviousClick}
+            className="rounded-full border-4 border-black w-5 h-5"
+          ></div>
+          <div className="px-3 w-[90vw] flex justify-center">
+            <ProjectSliderImages
+              project={projectData.projects[displayLeft]}
+              active={false}
+            />
+            <ProjectSliderImages
+              project={projectData.projects[displayMiddle]}
+              active={true}
+            />
+            <ProjectSliderImages
+              project={projectData.projects[displayRight]}
+              active={false}
+            />
+          </div>
+          <div
+            onClick={handleNextClick}
+            className="rounded-full border-4 border-black w-5 h-5"
+          ></div>
         </div>
-        <div
-          className={`${
-            isOne === 2 ? "order1" : isOne === 3 ? "order-3" : "order-2"
-          } h-60 w-60 bg-green-500 transition-all duration-1000`}
-        >
-          2
+        <div className="w-screen flex justify-center">
+          <div className="mt-10 w-[90%] lg:w-[80%] bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 p-5 md:p-10 dark:text-zinc-200">
+            <h3>{projectData.projects[displayMiddle].name}</h3>
+            <div>{projectData.projects[displayMiddle].description}</div>
+          </div>
         </div>
-        <div
-          className={`${
-            isOne === 3 ? "order1" : isOne === 1 ? "order-3" : "order-2"
-          } h-40 w-40 bg-green-300 transition-all duration-1000`}
-        >
-          3
-        </div>
-        {/* Projects */}
-        {/* <div className="w-96 h-96 shadow-up bg-green-200 shadow-black"></div> */}
-        {/* <div className="flex w-screen items-center justify-center">
-          <div className="w-[90%]"> */}
-        {/* <div id="previous" className="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
-                    <i class="fas fas fa-angle-left"></i>
-                </div> */}
-        {/* <div className="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
-              {projects.map((project) => ( */}
-        {/* <ProjectComponent key={project.id} project={project} /> */}
-        {/* ))} */}
-        {/* </div> */}
-        {/* <div id="next" className="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
-                    <i class="fas fas fas fa-angle-right"></i>
-                </div> */}
-        {/* </div>
-        </div> */}
       </div>
-      <button className="mr-10" onClick={handlePreviousClick}>previous</button>
-      <button onClick={handleNextClick}>next</button>
     </section>
   );
 }
