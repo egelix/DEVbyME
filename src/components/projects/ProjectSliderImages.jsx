@@ -2,7 +2,7 @@
 
 import ActiveProjectImagesSlider from "./ActiveProjectImagesSlider";
 
-function ProjectSliderImages({ project, active }) {
+function ProjectSliderImages({ project, active, openScreens }) {
   // const sliderImagesElements = [];
 
   // for (let sliderImg of project.activeSliderPics) {
@@ -13,23 +13,23 @@ function ProjectSliderImages({ project, active }) {
   //   </li>)
   // }
 
-
   return (
     <div
       className={` 
-      ${active ? "w-[30%]" : "w-[20%]"} 
+      ${active ? "w-[40%] cursor-pointer" : "w-[30%] opacity-50"} 
       flex items-center mx-3 rounded-lg`}
+      onClick={openScreens}
     >
-      {active ? (
+      {/* {active ? (
           <ActiveProjectImagesSlider project={project} />
          
-      ) : (
+      ) : ( */}
         <img
           src={project.cover}
           alt={`Screenshot of ${project.name}`}
-          className={`rounded-lg shadow-black shadow-md opacity-70"}`}
+          className={`rounded-lg shadow-black shadow-md`}
         />
-      )}
+      {/* )} */}
       {/* <div className="relative w-[640px] h-80">
         <div
           style={{ backgroundImage: `url(${project.gif})` }}

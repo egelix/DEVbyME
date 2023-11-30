@@ -1,6 +1,7 @@
 import projectData from "../../content/ProjectData";
 import { useEffect, useState } from "react";
 import ProjectSliderImages from "./ProjectSliderImages";
+import ProjectScreens from "./ProjectScreens";
 
 function Projects({ elementRef }) {
   const [displayMiddle, setDisplayMiddle] = useState(
@@ -8,6 +9,7 @@ function Projects({ elementRef }) {
   );
   const [displayLeft, setDisplayLeft] = useState(4);
   const [displayRight, setDisplayRight] = useState(1);
+  const [showProjectScreensWindow, setShowProjectScreensWindow] = useState(false);
 
   useEffect(() => {
     displayMiddle === 0
@@ -17,6 +19,11 @@ function Projects({ elementRef }) {
       ? setDisplayRight(0)
       : setDisplayRight(displayMiddle + 1);
   }, [displayMiddle]);
+
+  function handleProjectScreensWindowOpenClick() {
+    console.log("test")
+    setShowProjectScreensWindow(true)
+  }
 
   function handleNextClick() {
     displayMiddle === projectData.projects.length - 1
@@ -31,7 +38,8 @@ function Projects({ elementRef }) {
 
   return (
     <section id="projects-section" ref={elementRef} className="h-screen">
-      <div className="pt-16">
+      <div className="relative pt-16">
+        {showProjectScreensWindow && <ProjectScreens project={projectData.projects[displayMiddle]} />}
         <div className="flex w-screen items-center justify-center">
           <div
             onClick={handlePreviousClick}
@@ -41,14 +49,17 @@ function Projects({ elementRef }) {
             <ProjectSliderImages
               project={projectData.projects[displayLeft]}
               active={false}
+              openScreens={null}
             />
             <ProjectSliderImages
               project={projectData.projects[displayMiddle]}
               active={true}
+              openScreens={handleProjectScreensWindowOpenClick}
             />
             <ProjectSliderImages
               project={projectData.projects[displayRight]}
               active={false}
+              openScreens={null}
             />
           </div>
           <div
