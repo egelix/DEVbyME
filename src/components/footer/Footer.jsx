@@ -12,7 +12,7 @@ function Footer({ darkMode, setShowLegal, setShowDatenschutz }) {
   }
 
   return (
-    <div className="box-border text-xs md:text-sm z-10 pt-3 px-2 md:px-7 border-t-black border-t-2 h-32 w-screen text-black bg-zinc-400 dark:text-zinc-200 dark:bg-zinc-800 shadow-up shadow-black transition-all duration-500 ease-in">
+    <div className="box-border text-xs md:text-sm z-10 pt-3 px-2 md:px-7 border-t-black border-t-2 h-32 text-black bg-zinc-400 dark:text-zinc-200 dark:bg-zinc-800 shadow-up shadow-black transition-all duration-500 ease-in">
       <div className="grid grid-cols-2">
         <div className="flex h-[100%] align-middle">
           <div>

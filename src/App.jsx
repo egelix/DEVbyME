@@ -21,7 +21,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="relative overflow-y-scroll no-scrollbar">
+    <div className="relative overflow-y-hidden no-scrollbar">
       <DarkToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       <LegalNotice showLegal={showLegal} setShowLegal={setShowLegal} />
       <Datenschutz

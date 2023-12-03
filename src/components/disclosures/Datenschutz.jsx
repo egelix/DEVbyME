@@ -8,6 +8,7 @@ function Datenschutz({ showDatenschutz, setShowDatenschutz }) {
         className={`${
           showDatenschutz ? "inline" : "hidden"
         } fixed top-0 left-0 z-50 h-screen w-screen flex align-middle justify-center backdrop-blur-md`}
+        onClick={handleCloseClick}
       >
         <div className="relative opacity-100 bg-zinc-200 shadow-md shadow-black overflow-y-scroll my-[5%] h-[90%] w-[90%]">
           <div className="m-4 flex justify-end">
