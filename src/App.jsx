@@ -29,7 +29,7 @@ function App() {
         setShowDatenschutz={setShowDatenschutz}
       />
       <NavBar aboutRef={aboutRef} cvRef={cvRef} contactRef={contactRef} projectRef={projectRef} />
-      <Hero />
+      <Hero darkMode={darkMode}/>
       <About elementRef={aboutRef} />
       <CV elementRef={cvRef} />
       <Projects elementRef={projectRef} />
