@@ -22,6 +22,10 @@ export default {
           "-ms-overflow-style": "none",
           "scrollbar-width": "none",
       },
+        ".text-shadow": {
+          "text-shadow": "2px 2px black",
+
+        }
       };
       addUtilities(newUtilities)
     }

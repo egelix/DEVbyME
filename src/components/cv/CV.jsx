@@ -1,40 +1,93 @@
 import { useState, useRef, useEffect } from "react";
+import cvBg from "../../assets/CV/CV_bg.jpg";
+import Education from "./Education";
+import WorkExperience from "./WorkExperience";
+import Timeline from "./Timeline";
+import { useDraggable } from "react-use-draggable-scroll";
+import WorkInfobox from "./WorkInfobox";
+import EducationInfobox from "./EducationInfobox";
+import cvData from "../../content/cvData";
 
-function CV({ elementRef }) {
+function CV({ language, elementRef }) {
   const [cvIsIntersecting, setCvIsIntersecting] = useState(false);
   const cvRef = useRef(null);
+  const [workInfoData, setWorkInfoData] = useState(null);
+  const [educationInfoData, setEducationInfoData] = useState(null);
+  const [cvContent, setCvContent] = useState(cvData.german);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-        (entry) => {
-            console.log(entry[0].isIntersecting)
-            setCvIsIntersecting(entry[0].isIntersecting)
-        },
-        { rootMargin: ""}
-    );
-    observer.observe(cvRef.current);
-    return () => observer.disconnect();
-  }, []);
+    language === "english" ? setCvContent(cvData.english) : setCvContent(cvData.german);
+  }, [language])
+  
+  const ref = useRef();
+  const { events } = useDraggable(ref);
+  
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const currentMonth = date.getMonth() + 1;
+  
+  
+  
+  // const currentYear = 2024;
+  // const currentMonth = 12;
 
-  const endYear = 2023;
-  const startYear = 2002;
-  const yearDivs = [];
-  for (let i = endYear; i >= startYear; i--) {
-    yearDivs.push(<div className="h-7 w-full text-center">{i}</div>);
-  }
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //       (entry) => {
+  //           console.log(entry[0].isIntersecting)
+  //           setCvIsIntersecting(entry[0].isIntersecting)
+  //       },
+  //       { rootMargin: ""}
+  //   );
+  //   observer.observe(cvRef.current);
+  //   return () => observer.disconnect();
+  // }, []);
 
-  const [istest, settest] = useState(false);
-  function test() {
-    settest(true);
-  }
+  // const [istest, settest] = useState(false);
+  // function test() {
+  //   settest(true);
+  // }
 
   return (
-    <section id="cv-section" ref={elementRef} className="h-screen">
-      <div className="pt-16" onClick={test}>
-        CV
+    <section
+      id="cv-section"
+      ref={elementRef}
+      style={{ backgroundImage: `url(${cvBg})` }}
+      className="relative bg-cover bg-center bg-fixed pt-16 min-h-screen flex justify-center md:min-h-screen "
+    >
+      <div>
+        <div className="w-[90vw] md:mt-[5%] grid bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-10 dark:text-zinc-200">
+          <h3>{language === "english" ? "Work Experience" : "Berufserfahrung"}</h3>
+          <div
+            {...events}
+            ref={ref}
+            className="lg:py-4 h-full w-full grid grid-rows-3 overflow-x-auto no-scrollbar cursor-grab"
+          >
+            <WorkExperience
+              currentYear={currentYear}
+              currentMonth={currentMonth}
+              setWorkInfoData={setWorkInfoData}
+              data={cvContent && cvContent.work}
+            />
+            <Timeline currentYear={currentYear} currentMonth={currentMonth} />
+            <Education setEducationInfoData={setEducationInfoData} 
+            data={cvContent && cvContent.education} 
+            />
+          </div>
+          <h3>{language === "english" ? "Education" : "Ausbildung"}</h3>
+        </div>
+        <div
+          className={`${
+            workInfoData || educationInfoData ? "opacity-100" : "opacity-0"
+          } w-[90vw] transition-all flex justify-center mt-4`}
+        >
+          {workInfoData && <WorkInfobox data={workInfoData} />}
+          {educationInfoData && <EducationInfobox data={educationInfoData} />}
+        </div>
       </div>
-      <div className="flex justify-center w-full">
-        <div className="mt-5 rounded-lg bg-zinc-800 py-4 px-2 text-zinc-200 md: w-[95%] lg:w-[90%]">
+
+      {/* <div className="flex justify-center w-full">
+        <div className="mt-5 rounded-lg bg-zinc-800/50 py-4 px-2 text-zinc-200 md: w-[95%] lg:w-[90%]">
           <div className="h-10 grid grid-cols-2">
             <div className="text-right pr-12">Profession</div>
             <div className="text-left pl-12">Education</div>
@@ -93,7 +146,7 @@ function CV({ elementRef }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

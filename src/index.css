@@ -20,12 +20,11 @@
     @apply text-xl md:text-5xl
   }
 
-  /* h3:dark {
-    text-shadow: 1px 1px black;
+  h3 {
+    @apply dark:text-shadow text-2xl md:font-bold lg:font-normal lg:text-4xl 
   }
-  label {
-    text-shadow: 1px 1px black;
-  } */
 
-  
+  h4 {
+    @apply text-xl md:text-3xl lg:text-5xl
+  }
 }

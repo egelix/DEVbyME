@@ -17,7 +17,7 @@ function Hero({ darkMode }) {
     <section
       id="hero-section"
       style={{ backgroundImage: `url(${darkMode ? bgDark : bgLight})` }}
-      className="relative lg:pl-24 bg-cover bg-right-bottom bg-fixed pt-16 w-screen flex items-center justify-center lg:justify-normal md:min-h-screen "
+      className="relative lg:pl-24 bg-cover bg-right-bottom bg-fixed pt-16 flex items-center justify-center lg:justify-normal md:min-h-screen "
     >
       <div 
       style={{ backgroundImage: `url(${coverTomatoe})` }}
