@@ -13,7 +13,7 @@ function WorkExperience({ currentYear, currentMonth, data, setWorkInfoData }) {
     currentMonth <= 9 ? "w-[1140px]" :
     currentMonth <= 10 ? "w-[1150px]" :
     currentMonth <= 11 ? "w-[1160px]" :
-    "w-[1170]"
+    "w-[1170px]"
   } 
       flex pl-2 items-center rounded-r-md border-[1px] border-black border-l-0 bg-zinc-200 dark:bg-zinc-700 h-10 cursor-pointer hover:font-bold hover:shadow-black hover:bg-zinc-300 transition-all`}
       onMouseEnter={() => setWorkInfoData(data.tw)}

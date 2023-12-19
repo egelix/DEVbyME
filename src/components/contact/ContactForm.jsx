@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-function ContactForm() {
+function ContactForm({ language }) {
   const [messageStatus, setMessageStatus] = useState("message");
   const form = useRef();
 
@@ -33,28 +33,35 @@ function ContactForm() {
 
   return (
     // <div className="w-screen md:[60%]">
-    <div className="w-[90%] md:w-[400px] lg:w-[600px] md:h-[500px] bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 p-5 md:p-10 dark:text-zinc-200">
+    <div className="w-[90%] md:w-[400px] lg:w-[600px] md:h-[500px] bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 p-5 md:p-10 dark:text-zinc-200 dark:text-shadow">
       {messageStatus === "message" && (
         <div>
           <h3 className="text-lg font-bold">
-            Please leave me a message and I will get back to you as soon as
-            possible
+            {language === "english"
+              ? "Leave a message here and I will get back to you as soon as possible"
+              : "Hinterlassen Sie mir eine Nachricht und ich melde mich in Kürze"}
           </h3>
           <hr className="mt-2" />
           <form className="grid grid-cols-1 " ref={form} onSubmit={sendEmail}>
-            <label className="mt-2 mb-1 font-bold">Name</label>
+            <label className="mt-2 mb-1 font-bold">
+              {language === "english" ? "name" : "Name"}
+            </label>
             <input
               type="text"
               name="user_name"
               className="border-zinc-800 border-1 rounded-sm px-2 py-2 dark:bg-zinc-700"
             />
-            <label className="mt-2 mb-1 font-bold">Email</label>
+            <label className="mt-2 mb-1 font-bold">
+              {language === "english" ? "email" : "Email"}
+            </label>
             <input
               type="email"
               name="user_email"
               className="border-black border-1 rounded-sm px-2 py-2 dark:bg-zinc-700"
             />
-            <label className="mt-2 mb-1 font-bold">Message</label>
+            <label className="mt-2 mb-1 font-bold">
+              {language === "english" ? "message" : "Nachricht"}
+            </label>
             <textarea
               name="message"
               className="border-black border-1 rounded-sm h-36 p-1 dark:bg-zinc-700"
@@ -62,9 +69,9 @@ function ContactForm() {
             <button
               type="submit"
               value="Send"
-              className="ml-auto mt-2 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-zinc-200 hover:bg-zinc-400 dark"
+              className="ml-auto mt-2 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-black dark:text-shadow hover:bg-zinc-400 dark:hover:bg-zinc-700 dark"
             >
-              Send
+              {language === "english" ? "send" : "Senden"}
             </button>
           </form>
         </div>

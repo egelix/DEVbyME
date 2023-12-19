@@ -7,6 +7,10 @@ import { useDraggable } from "react-use-draggable-scroll";
 import WorkInfobox from "./WorkInfobox";
 import EducationInfobox from "./EducationInfobox";
 import cvData from "../../content/cvData";
+import cvMobileBg from "../../assets/CV/CV_mobile_bg.jpg";
+import TimelineMobile from "./TimelineMobile";
+import WorkExperienceMobile from "./WorkexperienceMobile";
+import EducationMobile from "./EducationMobile";
 
 function CV({ language, elementRef }) {
   const [cvIsIntersecting, setCvIsIntersecting] = useState(false);
@@ -16,18 +20,18 @@ function CV({ language, elementRef }) {
   const [cvContent, setCvContent] = useState(cvData.german);
 
   useEffect(() => {
-    language === "english" ? setCvContent(cvData.english) : setCvContent(cvData.german);
-  }, [language])
-  
+    language === "english"
+      ? setCvContent(cvData.english)
+      : setCvContent(cvData.german);
+  }, [language]);
+
   const ref = useRef();
   const { events } = useDraggable(ref);
-  
+
   const date = new Date();
   const currentYear = date.getFullYear();
   const currentMonth = date.getMonth() + 1;
-  
-  
-  
+
   // const currentYear = 2024;
   // const currentMonth = 12;
 
@@ -49,40 +53,76 @@ function CV({ language, elementRef }) {
   // }
 
   return (
-    <section
-      id="cv-section"
-      ref={elementRef}
-      style={{ backgroundImage: `url(${cvBg})` }}
-      className="relative bg-cover bg-center bg-fixed pt-16 min-h-screen flex justify-center md:min-h-screen "
-    >
-      <div>
-        <div className="w-[90vw] md:mt-[5%] grid bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-10 dark:text-zinc-200">
-          <h3>{language === "english" ? "Work Experience" : "Berufserfahrung"}</h3>
+    <section id="cv-section" ref={elementRef}>
+      <div
+        style={{ backgroundImage: `url(${cvBg})` }}
+        className="hidden md:flex relative bg-cover bg-center bg-fixed pt-16 min-h-screen justify-center"
+      >
+        <div>
+          <div className="w-[90vw] md:mt-[3%] lg:mt-[5%] grid bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
+            <h3>
+              {language === "english" ? "Work Experience" : "Berufserfahrung"}
+            </h3>
+            <div
+              {...events}
+              ref={ref}
+              className="lg:py-4 h-full w-full grid grid-rows-3 overflow-x-auto no-scrollbar cursor-grab"
+            >
+              <WorkExperience
+                currentYear={currentYear}
+                currentMonth={currentMonth}
+                setWorkInfoData={setWorkInfoData}
+                data={cvContent && cvContent.work}
+              />
+              <Timeline currentYear={currentYear} currentMonth={currentMonth} />
+              <Education
+                setEducationInfoData={setEducationInfoData}
+                data={cvContent && cvContent.education}
+              />
+            </div>
+            <h3>{language === "english" ? "Education" : "Ausbildung"}</h3>
+          </div>
           <div
-            {...events}
-            ref={ref}
-            className="lg:py-4 h-full w-full grid grid-rows-3 overflow-x-auto no-scrollbar cursor-grab"
+            className={`${
+              workInfoData || educationInfoData ? "opacity-100" : "opacity-0"
+            } w-[90vw] transition-all flex justify-center mt-4`}
           >
-            <WorkExperience
+            {workInfoData && <WorkInfobox data={workInfoData} />}
+            {educationInfoData && <EducationInfobox data={educationInfoData} />}
+          </div>
+        </div>
+      </div>
+      <div
+        style={{ backgroundImage: `url(${cvMobileBg})` }}
+        className="flex md:hidden relative bg-cover bg-center bg-fixed pt-16 min-h-screen items-center justify-center"
+      >
+        <div className="w-[90vw] h-[85vh] p-2 grid justify-center bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
+          <div className="w-full px-3 flex justify-between">
+            <div className="w-[220px] p-[10px] text-left">Work Experience</div>
+            <div className="w-[220px] text-right">Education</div>
+          </div>
+          <div
+            // {...events}
+            // ref={ref}
+            className="h-full w-full flex overflow-y-scroll overflow-x-scroll no-scrollbar"
+          >
+            <WorkExperienceMobile
+                currentYear={currentYear}
+                currentMonth={currentMonth}
+                setWorkInfoData={setWorkInfoData}
+                data={cvContent && cvContent.work}
+                language={language}
+              />
+            <TimelineMobile
               currentYear={currentYear}
               currentMonth={currentMonth}
-              setWorkInfoData={setWorkInfoData}
-              data={cvContent && cvContent.work}
             />
-            <Timeline currentYear={currentYear} currentMonth={currentMonth} />
-            <Education setEducationInfoData={setEducationInfoData} 
-            data={cvContent && cvContent.education} 
-            />
+            <EducationMobile
+                setEducationInfoData={setEducationInfoData}
+                data={cvContent && cvContent.education}
+                language={language}
+              />
           </div>
-          <h3>{language === "english" ? "Education" : "Ausbildung"}</h3>
-        </div>
-        <div
-          className={`${
-            workInfoData || educationInfoData ? "opacity-100" : "opacity-0"
-          } w-[90vw] transition-all flex justify-center mt-4`}
-        >
-          {workInfoData && <WorkInfobox data={workInfoData} />}
-          {educationInfoData && <EducationInfobox data={educationInfoData} />}
         </div>
       </div>
 

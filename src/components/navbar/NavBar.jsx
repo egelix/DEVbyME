@@ -41,7 +41,7 @@ function NavBar({aboutRef, cvRef, contactRef, projectRef, darkMode}) {
   }
 
   return (
-    <div className="text-lg z-20 align-middle fixed top-0 left-0 shadow-md shadow-black w-full text-black bg-zinc-400 dark:text-zinc-200 dark:bg-zinc-800 transition-all duration-500 ease-in">
+    <div className="text-lg z-30 align-middle fixed top-0 left-0 shadow-md shadow-black w-full text-black bg-zinc-400 dark:text-zinc-200 dark:bg-zinc-800 transition-all duration-500 ease-in">
       <div className="md:pr-10 pl-4 py-1 pr-7 w-full md:flex justify-between items-center align-middle ">
         <img onClick={scrollToTop} src={darkMode ? logoDark2 : logo4} alt="Link to Hero Section" className="w-14 p-0 m-0 cursor-pointer"/>
         <div

@@ -27,4 +27,12 @@
   h4 {
     @apply text-xl md:text-3xl lg:text-5xl
   }
+
+  h5 {
+    @apply text-xl font-bold my-4
+  }
+
+  h6 {
+    @apply text-lg font-bold my-4
+  }
 }

@@ -119,7 +119,7 @@ function Timeline({currentYear, currentMonth}) {
   return (
     <div className="border-box grid" >
       <div className="flex">{currentYearEven ? evenYearDivs : oddYearDivs}</div>
-      <div className="w-full h-4 rounded-r-full bg-gradient-to-b from-red-200 via-red-400 to-red-200">
+      <div className="w-full h-2 rounded-r-full bg-red-600">
         {/* <div className="sticky top-1/2">
               <div className="relative h-4 w-4">
                 <div className="absolute h-4 w-4 animate-ping rounded-full bg-red-700 opacity-75"></div>

@@ -1,8 +1,8 @@
 function WorkInfobox({ data }) {
   return (
-    <div className="p-4 rounded-md bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-200 dark:text-shadow backdrop-blur-sm grid justify-center">
-      <div className="text-lg">{data.company}</div>
-      <div className="text-xl font-bold">{data.job}</div>
+    <div className="md:p-2 lg:p-4 md:text-sm lg:text-lg rounded-md bg-zinc-200 dark:bg-zinc-700 dark:text-zinc-200 dark:text-shadow backdrop-blur-sm grid justify-center">
+      <div className="md:text-md lg:text-lg">{data.company}</div>
+      <div className="md:text-lg lg:text-xl font-bold">{data.job}</div>
       <div>
         {data.from} - {data.to}
       </div>

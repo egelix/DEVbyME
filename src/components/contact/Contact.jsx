@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm";
 import contactLight from "../../assets/Contact/mailbox.png";
 
-function Contact({ elementRef }) {
+function Contact({ language, elementRef }) {
   return (
     <section
       ref={elementRef}
@@ -9,7 +9,7 @@ function Contact({ elementRef }) {
     >
       <div style={{ backgroundImage: `url(${contactLight})` }} className="bg-cover bg-center w-screen">
         <div className="w-screen md:w-[60%] lg:w-[60%] h-full flex items-center justify-center">
-          <ContactForm />
+          <ContactForm language={language} />
           {/* <div className="w-[90%] h-[90%] bg-green-200"></div> */}
         </div>
       </div>
