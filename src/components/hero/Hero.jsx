@@ -19,10 +19,10 @@ function Hero({ darkMode }) {
       style={{ backgroundImage: `url(${darkMode ? bgDark : bgLight})` }}
       className="relative lg:pl-24 bg-cover bg-right-bottom bg-fixed pt-16 flex items-center justify-center lg:justify-normal md:min-h-screen "
     >
-      <div 
+      {/* <div 
       style={{ backgroundImage: `url(${coverTomatoe})` }}
       className="absolute top-0 left-0 w-screen md:min-h-screen bg-cover bg-right-bottom bg-fixed z-10"
-      ></div>
+      ></div> */}
       <div className="w-[90%] h-max-[90%] p-4 my-6 bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl md:min-w-[70vh] md:min-h-[70vh]  dark:bg-black/30 text-zinc-200">
         <div>
           <h1>Martin Egert</h1>

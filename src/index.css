@@ -10,14 +10,13 @@
   }
 
   h1 {
-    text-shadow: 2px 2px black;
-    @apply text-5xl md:text-[112px] lg:text-[138px]
+    @apply text-shadow text-5xl md:text-[112px] lg:text-[138px]
     /* @apply text-[13vw] md:text-[10vw] lg:text-[9vw] */
   }
 
   h2 {
-    text-shadow: 2px 2px black;
-    @apply text-xl md:text-5xl
+    /* text-shadow: 1px 0 black; */
+    @apply text-shadow text-xl md:text-5xl
   }
 
   h3 {

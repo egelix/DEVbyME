@@ -94,7 +94,7 @@ function CV({ language, elementRef }) {
       </div>
       <div
         style={{ backgroundImage: `url(${cvMobileBg})` }}
-        className="flex md:hidden relative bg-cover bg-center bg-fixed pt-16 min-h-screen items-center justify-center"
+        className="flex md:hidden relative bg-cover bg-center pt-16 min-h-screen items-center justify-center"
       >
         <div className="w-[90vw] h-[85vh] p-2 grid justify-center bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
           <div className="w-full px-3 flex justify-between">
