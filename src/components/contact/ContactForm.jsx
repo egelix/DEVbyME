@@ -69,7 +69,7 @@ function ContactForm({ language }) {
             <button
               type="submit"
               value="Send"
-              className="ml-auto mt-2 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-black dark:text-shadow hover:bg-zinc-400 dark:hover:bg-zinc-700 dark"
+              className="ml-auto mt-2 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-black dark:text-shadow hover:bg-zinc-400 dark:hover:bg-zinc-700"
             >
               {language === "english" ? "send" : "Senden"}
             </button>
@@ -77,27 +77,45 @@ function ContactForm({ language }) {
         </div>
       )}
       {messageStatus === "sent" && (
-        <div>
-          <p>Thank you for your message!</p>
-          <p>I will get back to you as soon as possible</p>
-          <button
-            onClick={resetContactForm}
-            className="text-black border-black border-2 w-20 rounded-sm bg-zinc-200 hover:bg-red-700 cursor-pointer"
-          >
-            New message
-          </button>
+        <div className="grid items-center justify-center h-full w-full">
+          <div>
+            <p className="font-bold text-xl">
+              {language === "english"
+                ? "Thank you for your message!"
+                : "Vielen Dank!"}
+            </p>
+            <p className="text-lg">
+              {language === "english"
+                ? "I will get back to you as soon as possible"
+                : "Ich melde mich so bald wie möglich"}
+            </p>
+            <button
+              onClick={resetContactForm}
+              className="mt-4 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-black dark:text-shadow hover:bg-zinc-400 dark:hover:bg-zinc-700"
+            >
+              {language === "english" ? "New message" : "Neue Nachricht"}
+            </button>
+          </div>
         </div>
       )}
       {messageStatus === "error" && (
-        <div>
-          <p>Oops!</p>
-          <p>Seems like something went wrong. Please try again!</p>
-          <button
-            onClick={resetContactForm}
-            className="text-black border-black border-2 w-20 rounded-sm bg-zinc-200 hover:bg-red-700 cursor-pointer"
-          >
-            New message
-          </button>
+        <div className="grid items-center justify-center h-full w-full">
+          <div>
+            <p className="font-bold text-xl">
+              {language === "english" ? "OOPS!" : "Hoppala!"}
+            </p>
+            <p className="text-lg">
+              {language === "english"
+                ? "Seems like something went wrong. Please try again!"
+                : "Da dürfte etwas falsch gelaufen sein..."}
+            </p>
+            <button
+              onClick={resetContactForm}
+              className="mt-4 text-black shadow-sm shadow-black w-20 rounded-md bg-zinc-200 dark:bg-zinc-500 dark:text-zinc-200 dark:shadow-black dark:text-shadow hover:bg-zinc-400 dark:hover:bg-zinc-700"
+            >
+              {language === "english" ? "New try" : "Neuer Versuch"}
+            </button>
+          </div>
         </div>
       )}
     </div>
