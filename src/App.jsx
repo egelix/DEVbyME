@@ -24,7 +24,18 @@ function App() {
   return (
     <div className="relative overflow-y-hidden no-scrollbar">
       <DarkToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="fixed left-0 top-20 z-50"><button className="border-2 border-green-600 bg-green-500" onClick={() => language === "english" ? setLanguage("german") : setLanguage("english")}>toggle language</button></div>
+      {/* <div className="fixed left-0 top-20 z-50">
+        <button
+          className="border-2 border-green-600 bg-green-500"
+          onClick={() =>
+            language === "english"
+              ? setLanguage("german")
+              : setLanguage("english")
+          }
+        >
+          toggle language
+        </button>
+      </div> */}
       <LegalNotice
         language={language}
         showLegal={showLegal}
@@ -36,6 +47,7 @@ function App() {
         setShowDatenschutz={setShowDatenschutz}
       />
       <NavBar
+        setLanguage={setLanguage}
         language={language}
         aboutRef={aboutRef}
         cvRef={cvRef}
