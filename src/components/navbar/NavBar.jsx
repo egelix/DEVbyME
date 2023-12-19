@@ -1,4 +1,3 @@
-import burgerOpen from "../../assets/navBarIcons/BurgerClose.png";
 import burgerDark from "../../assets/navBarIcons/burgerDark.png";
 import burgerLight from "../../assets/navBarIcons/burgerLight.png"
 import burgerCloseDark from "../../assets/navBarIcons/burgerCloseDark.png"
