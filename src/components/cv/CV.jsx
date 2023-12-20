@@ -18,6 +18,7 @@ function CV({ language, elementRef }) {
   const [workInfoData, setWorkInfoData] = useState(null);
   const [educationInfoData, setEducationInfoData] = useState(null);
   const [cvContent, setCvContent] = useState(cvData.german);
+  const [showWorkSideMobile, setShowWorkSideMobile] = useState(true);
 
   useEffect(() => {
     language === "english"
@@ -92,36 +93,47 @@ function CV({ language, elementRef }) {
           </div>
         </div>
       </div>
+
       <div
         style={{ backgroundImage: `url(${cvMobileBg})` }}
         className="flex md:hidden relative bg-cover bg-center pt-16 min-h-screen items-center justify-center"
       >
-        <div className="w-[90vw] h-[85vh] p-2 grid justify-center bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
-          <div className="w-full px-3 flex justify-between">
-            <div className="w-[220px] p-[10px] text-left">Work Experience</div>
-            <div className="w-[220px] text-right">Education</div>
+        <div className="w-[90vw] max-w-[520px] h-[85vh] p-2 grid justify-center bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
+          <div className="w-[90vw] max-w-[520px] -mt-2 grid grid-cols-2 text-lg z-30">
+            <div
+              onClick={() => setShowWorkSideMobile(true)}
+              className={`${showWorkSideMobile ? "bg-zinc-500 shadow-md font-bold" : "bg-zinc-300 shadow-sm"} border-r-[1px] border-black text-center rounded-tl-xl shadow-black`}
+            >
+              Work Experience
+            </div>
+            <div
+              onClick={() => setShowWorkSideMobile(false)}
+              className={`${!showWorkSideMobile ? "bg-zinc-500 shadow-md font-bold" : "bg-zinc-300 shadow-sm"} border-l-[1px] border-black text-center rounded-tr-xl shadow-black`}
+            >
+              Education
+            </div>
           </div>
           <div
             // {...events}
             // ref={ref}
-            className="h-full w-full flex overflow-y-scroll overflow-x-scroll no-scrollbar"
+            className="mx-1 rounded-b-md h-full w-[cals(full-2)] flex overflow-y-scroll overflow-x-hidden no-scrollbar  shadow-black"
           >
             <WorkExperienceMobile
-                currentYear={currentYear}
-                currentMonth={currentMonth}
-                setWorkInfoData={setWorkInfoData}
-                data={cvContent && cvContent.work}
-                language={language}
-              />
+              currentYear={currentYear}
+              currentMonth={currentMonth}
+              setWorkInfoData={setWorkInfoData}
+              data={cvContent && cvContent.work}
+              language={language}
+            />
             <TimelineMobile
               currentYear={currentYear}
               currentMonth={currentMonth}
             />
             <EducationMobile
-                setEducationInfoData={setEducationInfoData}
-                data={cvContent && cvContent.education}
-                language={language}
-              />
+              setEducationInfoData={setEducationInfoData}
+              data={cvContent && cvContent.education}
+              language={language}
+            />
           </div>
         </div>
       </div>

@@ -6,13 +6,13 @@ function EducationMobile({ data, setEducationInfoData, language }) {
   function handleMoreClick(part) {
     showMore === part ? setShowMore(null) : setShowMore(part);
   }
-console.log(showMore)
+
   return (
     <div
       //   className="flex flex-col-reverse items-end justify-center w-[220px]"
       className="grid justify-items-center h-full w-[220px]"
     >
-      <div className="h-[30px]"></div>
+      <div className="h-[15px]"></div>
       <div
         // className="flex items-center"
         className="grid justify-items-center"

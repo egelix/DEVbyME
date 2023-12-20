@@ -95,35 +95,35 @@ function NavBar({
             </li>
           ))}
           <li className="flex justify-end my-7 md:my-0 md:ml-8">
-          <div className="p-[2px] border-2 border-black grid grid-cols-2 rounded-full w-12 h-6 bg-zinc-200 text-xs cursor-pointer">
-          <div
-            onClick={() =>
-              language === "english"
-                ? setLanguage("german")
-                : setLanguage("english")
-            }
-            className={`${
-              language === "english" ? "bg-zinc-500" : "bg-zinc-200"
-            } rounded-l-full text-center font-bold border-r-[1px] border-black`}
-          >
-            En
-          </div>
-          <div
-            onClick={() =>
-              language === "english"
-                ? setLanguage("german")
-                : setLanguage("english")
-            }
-            className={`${
-              language != "english" ? "bg-zinc-500" : "bg-zinc-200"
-            } rounded-r-full text-center font-bold border-l-[1px] border-black`}
-          >
-            De
-          </div>
-        </div>
+            <div
+              onClick={() =>
+                language === "english"
+                  ? setLanguage("german")
+                  : setLanguage("english")
+              }
+              className="text-black p-[2px] border-2 border-zinc-700 dark:border-zinc-200 grid grid-cols-2 rounded-full w-12 h-6 bg-zinc-200 dark:bg-zinc-700 text-xs cursor-pointer"
+            >
+              <div
+                className={`${
+                  language === "english"
+                    ? "bg-zinc-500 shadow-inner text-zinc-200"
+                    : "bg-zinc-200"
+                } rounded-l-full text-center shadow-black font-bold border-r-[1px] border-black`}
+              >
+                En
+              </div>
+              <div
+                className={`${
+                  language != "english"
+                    ? "bg-zinc-500 shadow-inner text-zinc-200"
+                    : "bg-zinc-200"
+                } rounded-r-full text-center shadow-black font-bold border-l-[1px] border-black`}
+              >
+                De
+              </div>
+            </div>
           </li>
         </ul>
-        
       </div>
     </div>
   );
