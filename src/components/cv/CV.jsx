@@ -99,16 +99,16 @@ function CV({ language, elementRef }) {
         className="flex md:hidden relative bg-cover bg-center pt-16 min-h-screen items-center justify-center"
       >
         <div className="w-[90vw] max-w-[520px] h-[85vh] p-2 grid justify-center bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">
-          <div className="w-[90vw] max-w-[520px] -mt-2 grid grid-cols-2 text-lg z-30">
+          <div className="w-[90vw] max-w-[520px] -mt-2 grid grid-cols-2 text-lg z-30 cursor-pointer">
             <div
               onClick={() => setShowWorkSideMobile(true)}
-              className={`${showWorkSideMobile ? "bg-zinc-500 shadow-md font-bold" : "bg-zinc-300 shadow-sm"} border-r-[1px] border-black text-center rounded-tl-xl shadow-black`}
+              className={`${showWorkSideMobile ? "bg-zinc-500 dark:bg-zinc-800 shadow-md font-bold" : "bg-zinc-300 dark:bg-zinc-700 shadow-sm"} border-r-[1px] border-black text-center rounded-tl-xl shadow-black`}
             >
               Work Experience
             </div>
             <div
               onClick={() => setShowWorkSideMobile(false)}
-              className={`${!showWorkSideMobile ? "bg-zinc-500 shadow-md font-bold" : "bg-zinc-300 shadow-sm"} border-l-[1px] border-black text-center rounded-tr-xl shadow-black`}
+              className={`${!showWorkSideMobile ? "bg-zinc-500 dark:bg-zinc-800 shadow-md font-bold" : "bg-zinc-300 dark:bg-zinc-700 shadow-sm"} border-l-[1px] border-black text-center rounded-tr-xl shadow-black`}
             >
               Education
             </div>

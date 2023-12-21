@@ -119,7 +119,7 @@ function TimelineMobile({currentYear, currentMonth}) {
     return (
       <div className="border-box flex" >
         <div className="flex-row">{currentYearEven ? evenYearDivs : oddYearDivs}</div>
-        <div className="w-2 h-full rounded-b-full bg-red-400">
+        <div className="w-2 h-[1320px] rounded-b-full bg-red-400">
           {/* <div className="sticky top-1/2">
                 <div className="relative h-4 w-4">
                   <div className="absolute h-4 w-4 animate-ping rounded-full bg-red-700 opacity-75"></div>
