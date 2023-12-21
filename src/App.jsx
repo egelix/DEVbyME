@@ -22,7 +22,7 @@ function App() {
   const [language, setLanguage] = useState("english");
 
   return (
-    <div className="relative overflow-y-hidden no-scrollbar">
+    <div className="relative overflow-x-clip no-scrollbar">
       <DarkToggle darkMode={darkMode} setDarkMode={setDarkMode} />
       <LegalNotice
         language={language}

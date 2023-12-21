@@ -23,7 +23,7 @@ export default {
           "scrollbar-width": "none",
       },
         ".text-shadow": {
-          "text-shadow": "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+          "text-shadow": "-1px 0 rgb(113 113 122 / 0.2), 0 1px black, 1px 0 black, 0 -1px rgb(113 113 122 / 0.2)",
 
         }
       };

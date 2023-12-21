@@ -3,11 +3,7 @@ import burgerLight from "../../assets/navBarIcons/burgerLight.png";
 import burgerCloseDark from "../../assets/navBarIcons/burgerCloseDark.png";
 import burgerCloseLight from "../../assets/navBarIcons/burgerCloseLight.png";
 
-import logo1 from "../../assets/navBarIcons/ME_Logo_1.png";
-import logo2 from "../../assets/navBarIcons/ME_Logo_2.png";
-import logo3 from "../../assets/navBarIcons/ME_Logo_3.png";
 import logo4 from "../../assets/navBarIcons/ME_Logo_4.png";
-import logoDark1 from "../../assets/navBarIcons/ME_Logo_Dark1.png";
 import logoDark2 from "../../assets/navBarIcons/ME_Logo_Dark2.png";
 
 import { useState } from "react";
@@ -53,6 +49,12 @@ function NavBar({
     scrollToSection(section);
     setIsOpen(false);
   }
+  function handleLanguageClick() {
+    language === "english"
+                  ? setLanguage("german")
+                  : setLanguage("english");
+                  setIsOpen(false);
+  }
 
   return (
     <div className="text-lg z-30 align-middle fixed top-0 left-0 shadow-md shadow-black w-full text-black bg-zinc-400 dark:text-zinc-200 dark:bg-zinc-800 transition-all duration-500 ease-in">
@@ -96,11 +98,7 @@ function NavBar({
           ))}
           <li className="flex justify-end my-7 md:my-0 md:ml-8">
             <div
-              onClick={() =>
-                language === "english"
-                  ? setLanguage("german")
-                  : setLanguage("english")
-              }
+              onClick={handleLanguageClick}
               className="text-black p-[2px] border-2 border-zinc-700 dark:border-zinc-200 grid grid-cols-2 rounded-full w-12 h-6 bg-zinc-200 dark:bg-zinc-700 text-xs cursor-pointer"
             >
               <div

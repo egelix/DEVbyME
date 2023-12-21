@@ -13,7 +13,7 @@ function CounterElement({ label, end, duration, delay }) {
   }, []);
 
   return (
-    <div className="[text-shadow:_2px_2px_black] md:text-2xl mb-2 md:mb-6">
+    <div className="text-shadow md:text-2xl mb-2 md:mb-">
       <div className="text-4xl md:text-6xl">
         <CountUp
           start={0}

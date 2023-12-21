@@ -3,21 +3,13 @@ import bgLight from "../../assets/Hero/HeroLight.jpg";
 import bgDark from "../../assets/Hero/HeroDark.jpg"
 import coverTomatoe from "../../assets/Hero/Tomatoe.png"
 
-function Hero({ darkMode }) {
-  //const [counterFinished, setCounterFinished] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setCounterFinished(true);
-  //   }, 4000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+function Hero({ language, darkMode }) {
 
   return (
     <section
       id="hero-section"
       style={{ backgroundImage: `url(${darkMode ? bgDark : bgLight})` }}
-      className="relative lg:pl-24 bg-cover bg-right-bottom bg-fixed pt-16 flex items-center justify-center lg:justify-normal md:min-h-screen "
+      className="relative lg:pl-24 bg-cover bg-right-bottom bg-fixed pt-16 flex items-center justify-center lg:justify-normal min-h-screen "
     >
       {/* <div 
       style={{ backgroundImage: `url(${coverTomatoe})` }}
@@ -27,100 +19,51 @@ function Hero({ darkMode }) {
         <div>
           <h1>Martin Egert</h1>
           <h2 className="pl-1 pt-1 md:pl-2">Full Stack Developer</h2>
-          <hr className="border-b-1 border-black mt-4 w-[70%]" />
+          <hr className="border-b-2 border-zinc-200 shadow-sm shadow-black mt-6 ml-1 w-[70%]" />
         </div>
         <div className="w-full pl-2 ">
           <div className="inline md:grid md:grid-cols-2 mt-6">
             <div>
               <CounterElement
-                label={"First Number"}
-                end={100}
+                label={language === "english" ? "years of navigating the www" : "Jahre im Internet unterwegs"}
+                end={27}
                 duration={3}
                 delay={1}
               />
             </div>
             <div>
               <CounterElement
-                label={"Second Number"}
-                end={100}
+                label={language === "english" ? "accounts on servers all over the globe" : "Accounts auf Servern, verteilt über den ganzen Planeten"}
+                end={743}
                 duration={3}
                 delay={1}
               />
             </div>
             <div>
               <CounterElement
-                label={"THird Number"}
-                end={100}
+                label={language === "english" ? "dev projects contributed to" : "Projekten beigesteuert"}
+                end={153}
                 duration={3}
                 delay={1}
               />
             </div>
             <div>
               <CounterElement
-                label={"Fourth Number"}
+                label={language === "english" ? "First Number" : "Erste Nummer"}
                 end={100}
                 duration={3}
                 delay={1}
               />
             </div>
-            <div className="mt-4">
+            <div className="mt-4 col-span-2 mb-6">
               <CounterElement
-                label={"completely made-up numbers to get your attention"}
+                label={language === "english" ? "random and very roughly estimated numbers to get your attention" : "willkürliche und sehr grob geschätzte Zahlen um Neugierde zu wecken"}
                 end={4}
                 duration={2}
                 delay={4}
               />
             </div>
           </div>
-
-          {/* <table className="mt-4 text-3xl w-full">
-            <tr>
-              <td>
-                <CounterElement
-                  label={"First Number"}
-                  end={100}
-                  duration={3}
-                  delay={1}
-                />
-              </td>
-              <td>
-              <CounterElement
-                  label={"Second Number"}
-                  end={2000}
-                  duration={3}
-                  delay={1}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-              <CounterElement
-                  label={"Third Number"}
-                  end={30}
-                  duration={3}
-                  delay={1}
-                />
-              </td>
-              <td>
-              <CounterElement
-                  label={"Fourth Number"}
-                  end={10}
-                  duration={3}
-                  delay={1}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td className={`${counterFinished ? "opacity-100" : "opacity-0"} transition-opacity ease-in-out duration-500`}>
-              <CounterElement
-                  label={"First Number"}
-                  end={100}
-                  duration={5}
-                  delay={4}
-                />
-              </td>
-            </tr>
-          </table> */}
         </div>
       </div>
     </section>
