@@ -2,7 +2,7 @@ import cvPdf from "./CV_Egert.pdf";
 import mePic from "../../assets/About/me.jpeg";
 import tomatoePic from "../../assets/About/tomatoe.png";
 import { useState } from "react";
-import aboutData from "../../content/about";
+import aboutData from "../../content/aboutData";
 import { TypeAnimation } from "react-type-animation";
 
 function About({ elementRef }) {
@@ -74,7 +74,7 @@ function About({ elementRef }) {
                 alt="picture of me"
                 className="w-1/3 md:hidden ml-1 mr-3 mt-2 float-left rounded-sm border-2 border-zinc-700 shadow-md shadow-black"
               />
-              <h7>{aboutData.english.part1}</h7>
+              {aboutData.english.part1.map((text, index) => <p key={index}>{text}</p>)}
             </div>
             <p className="text-2xl md:text-3xl font-semibold my-6">
               <span className="dark:text-zinc-400">ME</span>{" "}
