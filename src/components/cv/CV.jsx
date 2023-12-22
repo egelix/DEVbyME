@@ -57,7 +57,7 @@ function CV({ language, elementRef }) {
     <section id="cv-section" ref={elementRef}>
       <div
         style={{ backgroundImage: `url(${cvBg})` }}
-        className="hidden md:flex relative bg-cover bg-center bg-fixed pt-16 min-h-screen justify-center"
+        className="hidden md:flex relative bg-cover bg-center pt-16 min-h-screen justify-center"
       >
         <div>
           <div className="w-[90vw] md:mt-[3%] lg:mt-[5%] grid bg-zinc-500/20 backdrop-blur-md shadow-sm shadow-black rounded-xl dark:bg-black/30 md:p-4 lg:p-10 dark:text-zinc-200">

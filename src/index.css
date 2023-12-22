@@ -34,4 +34,8 @@
   h6 {
     @apply text-lg font-bold my-4
   }
+
+  h7 {
+    @apply text-base lg:text-xl text-black dark:text-zinc-200
+  }
 }
