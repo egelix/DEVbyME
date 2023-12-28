@@ -10,9 +10,9 @@ function About({ elementRef }) {
     <section
       id="about-section"
       ref={elementRef}
-      className="md:h-screen -mt-16 py-20 bg-zinc-300 dark:bg-zinc-600 flex items-center justify-center"
+      className="min-h-screen -mt-16 py-20 bg-zinc-300 dark:bg-zinc-600 flex items-center justify-center"
     >
-      <div className="px-2 md:px-6 lg:px-10 w-[100%] max-w-[1220px] md:flex">
+      <div className="px-2 md:px-6 lg:px-10 w-[100%] max-w-[1500px] md:flex">
         <div className="hidden md:inline w-[30%]">
           <img
             src={mePic}
@@ -74,7 +74,7 @@ function About({ elementRef }) {
                 alt="picture of me"
                 className="w-1/3 md:hidden ml-1 mr-3 mt-2 float-left rounded-sm border-2 border-zinc-700 shadow-md shadow-black"
               />
-              {aboutData.english.part1.map((text, index) => <p key={index}>{text}</p>)}
+              {aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)}
             </div>
             <p className="text-2xl md:text-3xl font-semibold my-6">
               <span className="dark:text-zinc-400">ME</span>{" "}

@@ -2,7 +2,7 @@
   "name": "homepage",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://egelix.github.io/HomepageCV",
+  "homepage": "https://egelix.github.io/DEVbyME",
   "type": "module",
   "scripts": {
     "dev": "vite",
