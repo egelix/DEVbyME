@@ -1,11 +1,10 @@
 import cvPdf from "./CV_Egert.pdf";
 import mePic from "../../assets/About/me.jpeg";
 import tomatoePic from "../../assets/About/tomatoe.png";
-import { useState } from "react";
 import aboutData from "../../content/aboutData";
 import { TypeAnimation } from "react-type-animation";
 
-function About({ elementRef }) {
+function About({ language, elementRef }) {
   return (
     <section
       id="about-section"
@@ -19,7 +18,7 @@ function About({ elementRef }) {
             alt="picture of me"
             className="rounded-sm border-4 border-zinc-700 shadow-lg shadow-black"
           />
-          {/* <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center -mt-[30px]">
             <div>
               <a href={cvPdf} download="CV_Egert">
                 <img
@@ -40,7 +39,7 @@ function About({ elementRef }) {
               </a>
               <p>Lebenslauf</p>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="md:w-[70%] md:ml-6">
           <div className="grid">
@@ -74,7 +73,11 @@ function About({ elementRef }) {
                 alt="picture of me"
                 className="w-1/3 md:hidden ml-1 mr-3 mt-2 float-left rounded-sm border-2 border-zinc-700 shadow-md shadow-black"
               />
-              {aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)}
+              {
+              language === "english" 
+              ? aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)
+              : aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)
+              }
             </div>
             <p className="text-2xl md:text-3xl font-semibold my-6">
               <span className="dark:text-zinc-400">ME</span>{" "}

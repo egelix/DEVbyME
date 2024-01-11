@@ -10,7 +10,7 @@ function EducationMobile({ data, setEducationInfoData, language }) {
   return (
     <div
       //   className="flex flex-col-reverse items-end justify-center w-[220px]"
-      className="grid justify-items-center h-full w-[220px]"
+      className="grid justify-items-center h-full w-[200px]"
     >
       <div className="h-[15px]"></div>
       <div

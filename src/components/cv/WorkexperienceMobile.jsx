@@ -23,7 +23,7 @@ function WorkExperienceMobile({ currentYear, currentMonth, data, setWorkInfoData
       );
   
     return (
-      <div className="grid justify-items-center h-full w-[220px]">
+      <div className="grid justify-items-center h-full w-[200px]">
         {teamWorkDiv}
         <div className="grid justify-items-center">
           <div className="w-[200px] h-[35px] p-2 flex items-center rounded-md border-[1px] border-black bg-zinc-200 dark:bg-zinc-700 cursor-pointer hover:font-bold hover:shadow-black hover:bg-zinc-300 transition-all"

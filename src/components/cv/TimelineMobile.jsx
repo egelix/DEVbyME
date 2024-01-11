@@ -33,7 +33,7 @@ function TimelineMobile({currentYear, currentMonth}) {
               : currentMonth === 11
               ? "h-[55px]"
               : "h-[60px]"
-          } w-[35px] text-center border-b-[1px] border-black flex items-center`}
+          } w-[30px] text-center border-b-[1px] border-black flex items-center justify-center`}
         >
           {currentYear}
         </div>
@@ -72,7 +72,7 @@ function TimelineMobile({currentYear, currentMonth}) {
         evenYearDivs.push(
           <div key={currentYear}>
             {provideRightSizedYearDiv()}
-            <div className="w-[35px] h-[60px]"></div>
+            <div className="w-[30px] h-[60px]"></div>
           </div>
         );
         oddYearDivs.push(provideRightSizedEmptyDiv());
@@ -80,7 +80,7 @@ function TimelineMobile({currentYear, currentMonth}) {
         oddYearDivs.push(
           <div key={currentYear}>
             {provideRightSizedYearDiv()}
-            <div className="w-[35px] h-[60px]"></div>
+            <div className="w-[30px] h-[60px]"></div>
           </div>
         );
         evenYearDivs.push(provideRightSizedEmptyDiv());
@@ -89,15 +89,15 @@ function TimelineMobile({currentYear, currentMonth}) {
     function addEvenYearDiv(year) {
       year === startYear
         ? evenYearDivs.push(
-            <div className="w-[35px] h-[60px] border-t-[1px] border-black flex items-center" key={year}>
-              <div className="text-center">
+            <div className="w-[30px] h-[60px] border-t-[1px] border-black flex items-center justify-center" key={year}>
+              <div className="text-center justify-center">
                 {year}
               </div>
             </div>
           )
         : evenYearDivs.push(
-            <div className="grid grid-rows-2 w-[35px] h-[120px]" key={year}>
-              <div className="flex items-center text-center border-t-[1px] border-b-[1px] border-black">
+            <div className="grid grid-rows-2 w-[30px] h-[120px]" key={year}>
+              <div className="flex items-center justify-center text-center border-t-[1px] border-b-[1px] border-black">
                 {year}
               </div>
               <div></div>
@@ -107,8 +107,8 @@ function TimelineMobile({currentYear, currentMonth}) {
   
     function addOddYearDiv(year) {
       oddYearDivs.push(
-        <div className="grid grid-rows-2 w-[35px] h-[120px]" key={year}>
-          <div className="flex items-center text-center border-t-[1px] border-b-[1px] border-black">
+        <div className="grid grid-rows-2 w-[30px] h-[120px]" key={year}>
+          <div className="flex items-center justify-center text-center border-t-[1px] border-b-[1px] border-black">
             {year}
           </div>
           <div></div>
@@ -117,7 +117,7 @@ function TimelineMobile({currentYear, currentMonth}) {
     }
   
     return (
-      <div className="border-box flex" >
+      <div className="border-box flex text-xs mx-2" >
         <div className="flex-row">{currentYearEven ? evenYearDivs : oddYearDivs}</div>
         <div className="w-2 h-[1320px] rounded-b-full bg-red-400">
           {/* <div className="sticky top-1/2">
