@@ -76,7 +76,7 @@ function About({ language, elementRef }) {
               {
               language === "english" 
               ? aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)
-              : aboutData.english.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)
+              : aboutData.german.part1.map((text, index) => <p key={index} className="text-base lg:text-xl text-black dark:text-zinc-200">{text}</p>)
               }
             </div>
             <p className="text-2xl md:text-3xl font-semibold my-6">
@@ -102,8 +102,8 @@ function About({ language, elementRef }) {
               </span>
               <span className="dark:text-zinc-200">;</span>
             </p>
-            <h7>{aboutData.english.part2}</h7>
-            <h7 className="mt-4">{aboutData.english.part3}</h7>
+            <p className="text-base lg:text-xl text-black dark:text-zinc-200">{language === "english" ? aboutData.english.part2 : aboutData.german.part2}</p>
+            <p className="text-base mt-4 lg:text-xl text-black dark:text-zinc-200">{language === "english" ? aboutData.english.part3 : aboutData.german.part3}</p>
           </div>
         </div>
 
