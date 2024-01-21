@@ -125,7 +125,9 @@ function CV({ language, elementRef }) {
             <div
               // {...events}
               // ref={ref}
-              className={`absolute ${showWorkSideMobile ? "left-0" : "right-0"} mx-1 rounded-b-md h-full w-[cals(full-2)] flex overflow-y-scroll overflow-x-hidden no-scrollbar  shadow-black`}
+              className={`absolute ${
+                showWorkSideMobile ? "left-0" : "right-0"
+              } mx-1 rounded-b-md h-full w-[cals(full-2)] flex overflow-y-scroll overflow-x-hidden no-scrollbar  shadow-black`}
             >
               <WorkExperienceMobile
                 currentYear={currentYear}
@@ -139,6 +141,8 @@ function CV({ language, elementRef }) {
                 currentMonth={currentMonth}
               />
               <EducationMobile
+                currentYear={currentYear}
+                currentMonth={currentMonth}
                 setEducationInfoData={setEducationInfoData}
                 data={cvContent && cvContent.education}
                 language={language}

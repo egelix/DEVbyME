@@ -18,7 +18,7 @@ function About({ language, elementRef }) {
             alt="picture of me"
             className="rounded-sm border-4 border-zinc-700 shadow-lg shadow-black"
           />
-          <div className="flex items-center justify-center -mt-[30px]">
+          {/* <div className="flex items-center justify-center -mt-[30px]">
             <div>
               <a href={cvPdf} download="CV_Egert">
                 <img
@@ -39,7 +39,7 @@ function About({ language, elementRef }) {
               </a>
               <p>Lebenslauf</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="md:w-[70%] md:ml-6">
           <div className="grid">
