@@ -67,7 +67,7 @@ function Projects({ elementRef, darkMode, setProjectToShowDetails, language }) {
           <img
             src={darkMode ? arrowLeftDark : arrowLeftLight}
             alt="go left"
-            className="-mr-[3%] w-16 opacity-50 hover:opacity-100 hover:w-20 hover:-mr-[calc(3%+16px)] transition-all ease-in-out duration-200"
+            className="z-20 -mr-[3%] w-16 opacity-50 hover:opacity-100 hover:w-20 hover:-mr-[calc(3%+16px)] transition-all ease-in-out duration-200"
             onClick={handlePreviousClick}
           />
           <div className="px-3 w-[90vw] flex justify-center">
@@ -94,7 +94,7 @@ function Projects({ elementRef, darkMode, setProjectToShowDetails, language }) {
           <img
             src={darkMode ? arrowRightDark : arrowRightLight}
             alt="go right"
-            className="-ml-[3%] w-16 opacity-50 hover:opacity-100 hover:w-20 hover:-ml-[calc(3%+16px)] transition-all ease-in-out duration-200"
+            className="z-20 -ml-[3%] w-16 opacity-50 hover:opacity-100 hover:w-20 hover:-ml-[calc(3%+16px)] transition-all ease-in-out duration-200"
             onClick={handleNextClick}
           />
         </div>
