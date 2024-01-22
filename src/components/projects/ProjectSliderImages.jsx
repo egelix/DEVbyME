@@ -1,6 +1,6 @@
 // import cover from "../../assets/projects/struggle/Struggle1.png";
 
-import ActiveProjectImagesSlider from "./ActiveProjectImagesSlider";
+// import ActiveProjectImagesSlider from "./ActiveProjectImagesSlider";
 
 function ProjectSliderImages({ project, active, openScreens }) {
   // const sliderImagesElements = [];
@@ -16,7 +16,7 @@ function ProjectSliderImages({ project, active, openScreens }) {
   return (
     <div
       className={` 
-      ${active ? "w-[40%] cursor-pointer" : "w-[30%] opacity-50"} 
+      ${active ? "w-[40%] cursor-pointer -mx-[5%] z-20" : "w-[30%] opacity-50 z-10 mt-6"} 
       flex items-center mx-3 rounded-lg`}
       onClick={openScreens}
     >
@@ -27,7 +27,7 @@ function ProjectSliderImages({ project, active, openScreens }) {
         <img
           src={project.cover}
           alt={`Screenshot of ${project.name}`}
-          className={`rounded-lg shadow-black shadow-md`}
+          className={`w-full rounded-lg shadow-black shadow-md`}
         />
       {/* )} */}
       {/* <div className="relative w-[640px] h-80">

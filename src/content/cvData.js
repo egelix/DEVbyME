@@ -60,7 +60,7 @@ const cvData = {
     education: {
       hak: {
         degree: "Matura",
-        name: null,
+        name: "HAK (Matura)",
         school: "HAK Neusiedl am See",
         start: "09/1997",
         end: "06/2002",
@@ -100,7 +100,7 @@ const cvData = {
       },
       codecool: {
         degree: "Zertifikat",
-        name: "Full Stack Developer",
+        name: "Full Stack Developement",
         school: "Codecool Austria GmbH",
         start: "10/2022",
         end: "09/2023",
@@ -169,7 +169,7 @@ const cvData = {
     education: {
       hak: {
         degree: "Matura",
-        name: null,
+        name: "HAK (Matura)",
         school: "HAK Neusiedl am See",
         start: "09/1997",
         end: "06/2002",
@@ -209,7 +209,7 @@ const cvData = {
       },
       codecool: {
         degree: "Certificate",
-        name: "Full Stack Developer",
+        name: "Full Stack Development",
         school: "Codecool Austria GmbH",
         start: "10/2022",
         end: "09/2023",

@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import LegalNotice from "./components/disclosures/LegalNotice";
 import Datenschutz from "./components/disclosures/Datenschutz";
 import DarkToggle from "./components/darkToggle/DarkToggle";
+import ProjectScreens from "./components/projects/ProjectScreens";
 
 function App() {
   const aboutRef = useRef(null);
@@ -20,6 +21,7 @@ function App() {
   const [showDatenschutz, setShowDatenschutz] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState("english");
+  const [projectToShowDetails, setProjectToShowDetails] = useState(null);
 
   return (
     <div className="relative overflow-x-clip no-scrollbar">
@@ -29,6 +31,12 @@ function App() {
         showLegal={showLegal}
         setShowLegal={setShowLegal}
       />
+      {projectToShowDetails && (
+        <ProjectScreens
+          project={projectToShowDetails}
+          setProjectToShowDetails={setProjectToShowDetails}
+        />
+      )}
       <Datenschutz
         language={language}
         showDatenschutz={showDatenschutz}
@@ -46,7 +54,12 @@ function App() {
       <Hero language={language} darkMode={darkMode} />
       <About language={language} elementRef={aboutRef} />
       <CV language={language} elementRef={cvRef} />
-      <Projects language={language} elementRef={projectRef} />
+      <Projects
+        darkMode={darkMode}
+        language={language}
+        elementRef={projectRef}
+        setProjectToShowDetails={setProjectToShowDetails}
+      />
       <Contact language={language} elementRef={contactRef} />
       <Footer
         language={language}

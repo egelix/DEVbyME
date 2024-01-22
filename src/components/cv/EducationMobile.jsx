@@ -28,9 +28,9 @@ function EducationMobile({ data, setEducationInfoData, language, currentYear, cu
         className="grid justify-items-center"
       >
         <div
-          className={`w-[200px] h-[60px] p-2 rounded-md border-[1px] border-black bg-zinc-200 dark:bg-zinc-700 cursor-pointer hover:font-bold hover:shadow-black hover:bg-zinc-300 transition-all`}
+          className={`w-[200px] h-[60px] p-2 items-center rounded-md border-[1px] border-black bg-zinc-200 dark:bg-zinc-700 cursor-pointer hover:font-bold hover:shadow-black hover:bg-zinc-300 transition-all`}
         >
-          <p>Codecool</p>
+          {data.codecool.name}
           {/* <button
             className="text-green-500 bg-green-400"
             onClick={() => handleMoreClick("CC")}
@@ -60,7 +60,7 @@ function EducationMobile({ data, setEducationInfoData, language, currentYear, cu
           onMouseEnter={() => setEducationInfoData(data.hak)}
           onMouseLeave={() => setEducationInfoData(null)}
         >
-          HAK
+          {data.hak.name}
         </div>
       </div>
     </div>

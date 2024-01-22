@@ -108,7 +108,7 @@ function CV({ language, elementRef }) {
                   : "bg-zinc-300 dark:bg-zinc-700 shadow-sm"
               } border-r-[1px] border-black text-center rounded-tl-xl shadow-black`}
             >
-              Work Experience
+              {language === "english" ? "Work Experience" : "Berufserfahrung"}
             </div>
             <div
               onClick={() => setShowWorkSideMobile(false)}
@@ -118,7 +118,7 @@ function CV({ language, elementRef }) {
                   : "bg-zinc-300 dark:bg-zinc-700 shadow-sm"
               } border-l-[1px] border-black text-center rounded-tr-xl shadow-black`}
             >
-              Education
+              {language === "english" ? "Education" : "Ausbildung"}
             </div>
           </div>
           <div className="relative -mt-[calc(42.5vh-28px)] overflow-y-scroll overflow-x-hidden no-scrollbar ">
