@@ -49,8 +49,8 @@ function Hero({ language, darkMode }) {
             </div>
             <div>
               <CounterElement
-                label={language === "english" ? "First Number" : "Erste Nummer"}
-                end={100}
+                label={language === "english" ? "Udemy courses (bought)" : "Udemy-Kurse (gekauft)"}
+                end={37}
                 duration={3}
                 delay={1}
               />
